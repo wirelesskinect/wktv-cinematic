@@ -1,0 +1,41 @@
+/* WKTV — TV-style touches (kept light on purpose) */
+
+/* Red scrollbar = page progress you can see at a glance */
+html{scrollbar-color:#e62932 #0a0a0c}
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-track{background:#0a0a0c}
+::-webkit-scrollbar-thumb{background:linear-gradient(#ff5a5f,#c3161d);border-radius:10px;border:2px solid #0a0a0c}
+::-webkit-scrollbar-thumb:hover{background:#ff3b42}
+
+/* Stronger red progress bar across the top */
+.fx-progress{height:4px;background:linear-gradient(90deg,#ff7777,#ee302f 60%,#ff2a33);box-shadow:0 0 10px #ee302f,0 0 22px #ee302f88}
+
+/* Mini account card: a small preview of the real "My WKTV" page */
+.visual-account{padding:0}
+@media(max-width:760px){.visual-account{height:auto!important;padding:16px 0}}
+.mini-dash{width:88%;padding:10px 12px;border:1px solid #ffffff2a;border-radius:14px;background:linear-gradient(160deg,#1d1c21,#111114);box-shadow:0 14px 34px #000a;font-family:inherit}
+.md-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.md-pill{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:800;color:#4ade80;background:#0f2a1a;border:1px solid #1f6b3a;border-radius:100px;padding:2px 8px}
+.md-pill i{width:6px;height:6px;border-radius:50%;background:#4ade80;animation:md-live 2s ease-out infinite}
+@keyframes md-live{0%{box-shadow:0 0 0 0 #4ade80aa}70%{box-shadow:0 0 0 6px #4ade8000}100%{box-shadow:0 0 0 0 #4ade8000}}
+.md-days{font-size:10.5px;color:#a1a1aa}
+.md-days b{color:#d4d4d8;font-variant-numeric:tabular-nums}
+.md-title{display:block;font-size:14px;color:#fff;margin:5px 0 6px}
+.md-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.md-tile{position:relative;padding:5px 8px;border:1px solid #ffffff14;border-radius:9px;background:#ffffff06;min-width:0}
+.md-tile small{display:block;font-size:8px;letter-spacing:.08em;color:#8d8d97;margin-bottom:1px}
+.md-tile b{display:block;font-size:11.5px;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.md-tile em{position:absolute;right:7px;bottom:6px;font-style:normal;font-size:10px;font-weight:700;color:#ff6a6e}
+.md-btn{display:grid;place-items:center;font-size:11px;font-weight:800;color:#fff;border:1px solid #ffffff2e;border-radius:9px;background:#ffffff0c}
+
+/* TV "power on": picture panels switch on like a screen as you scroll to them */
+@keyframes tv-on{
+  0%{transform:scale(0,.006);filter:brightness(5);opacity:1}
+  30%{transform:scale(1,.006);filter:brightness(5)}
+  60%{transform:scale(1,1);filter:brightness(1.8) contrast(1.2)}
+  100%{transform:none;filter:none}
+}
+.tv-off{opacity:0}
+.tv-on{animation:tv-on .75s cubic-bezier(.2,.7,.2,1) both;transform-origin:50% 50%}
+
+@media(prefers-reduced-motion:reduce){.md-pill i{animation:none}.tv-off{opacity:1}.tv-on{animation:none}}

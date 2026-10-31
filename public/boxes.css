@@ -1,0 +1,39 @@
+/* Streaming box builder on the homepage: box (one-time setup) + rate plan */
+.boxes{display:grid;grid-template-columns:.9fr 1.3fr;gap:36px;align-items:start;margin-top:25px;padding:36px;border:1px solid #a43840;border-radius:22px;background:radial-gradient(ellipse at 95% 0%,#74111e55,transparent 55%),#1b1b20;scroll-margin-top:20px}
+.boxes h3{font-size:32px;letter-spacing:-.7px;margin-block:15px 12px}
+.boxes-head .muted{margin:0 0 20px;line-height:1.7}
+.boxes-includes{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.boxes-includes li{display:flex;gap:10px;font-size:15px;line-height:1.5;color:#e2e2e8}
+.boxes-includes li::before{content:"✓";flex:none;color:var(--red);font-weight:800}
+.boxes-includes b{color:#fff}
+.box-builder{background:#121216;border:1px solid #303036;border-radius:18px;padding:26px}
+.box-builder fieldset{border:0;margin:0 0 22px;padding:0}
+.box-builder legend{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#fff;margin-bottom:12px;padding:0}
+.box-builder .step{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:#e62932;color:#fff;font-size:13px}
+.choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.choice{position:relative;display:block;cursor:pointer}
+.choice input{position:absolute;opacity:0;pointer-events:none}
+.choice-body{position:relative;display:flex;flex-direction:column;gap:4px;height:100%;padding:16px 16px 14px 46px;border:1.5px solid #3a3a43;border-radius:14px;background:#18181d;transition:border-color .2s,background .2s,box-shadow .2s}
+.choice-body::before{content:"";position:absolute;left:16px;top:18px;width:18px;height:18px;border-radius:50%;border:2px solid #6b6b75;background:#0b0b0e}
+.choice:hover .choice-body{border-color:#7a2a30}
+.choice input:checked+.choice-body{border-color:#e62932;background:linear-gradient(135deg,#2a1215,#16161a 70%);box-shadow:0 0 0 1px #e62932,0 10px 30px #e629321f}
+.choice input:checked+.choice-body::before{border-color:#e62932;background:radial-gradient(circle,#ff4b55 0 4px,#0b0b0e 5px)}
+.choice input:focus-visible+.choice-body{outline:2px solid #ff4b55;outline-offset:3px}
+.choice-body b{font-size:17px;color:#fff}
+.choice-price{font-size:26px;font-weight:900;letter-spacing:-.5px;color:#fff;line-height:1.1}
+.choice-price em{font-style:normal;font-size:13px;font-weight:600;color:var(--muted);margin-left:2px}
+.choice-body small{font-size:12.5px;color:var(--muted);line-height:1.4}
+.choice-badge{position:absolute;top:-10px;right:12px;font-size:10px;font-weight:800;letter-spacing:.6px;color:#fff;background:#e62932;border-radius:100px;padding:4px 9px}
+.annual-pick{margin-top:14px}
+.annual-pick label{display:block;font-size:14px;font-weight:700;color:#fff;margin-bottom:8px}
+.annual-pick select{width:100%;min-height:52px;padding:12px 44px 12px 14px;border-radius:12px;border:1.5px solid #e62932;background:#0b0b0e url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%23ff4b55' stroke-width='2' fill='none'/%3E%3C/svg%3E") no-repeat right 16px center;color:#fff;font:600 16px Manrope,Arial,sans-serif;appearance:none;-webkit-appearance:none;cursor:pointer}
+.annual-pick select:focus{outline:2px solid #ff4b55;outline-offset:2px}
+.box-summary{border-top:1px solid #303036;padding-top:18px}
+.box-summary .line{display:flex;justify-content:space-between;gap:12px;font-size:15px;color:#cfcfd6;margin-bottom:8px}
+.box-summary .line small{color:var(--muted)}
+.box-summary .line.total{align-items:baseline;margin:14px 0 16px;padding-top:12px;border-top:1px dashed #3a3a43;color:#fff;font-weight:800;font-size:17px}
+.box-summary .line.total strong{font-size:38px;letter-spacing:-1px}
+.box-summary .button{width:100%;justify-content:center;font-size:17px;min-height:56px}
+.box-summary .fine{text-align:center;margin:12px 0 0}
+@media(max-width:950px){.boxes{grid-template-columns:1fr;padding:28px;gap:26px}}
+@media(max-width:650px){.boxes{padding:20px;border-radius:18px;margin-top:18px}.boxes h3{font-size:28px}.box-builder{padding:18px}.choice-grid{gap:10px}.choice-body{padding:14px 12px 12px 40px}.choice-body::before{left:12px;top:16px}.choice-price{font-size:22px}.box-summary .line.total strong{font-size:32px}}
